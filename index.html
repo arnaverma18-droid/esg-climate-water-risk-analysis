@@ -1,65 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ESG Climate & Water Risk Analysis</title>
-  <style>
-    body { font-family: 'Segoe UI', sans-serif; max-width: 900px; margin: 0 auto; padding: 40px 20px; background: #f9fafb; color: #1a202c; }
-    header { border-bottom: 3px solid #2b6cb0; padding-bottom: 20px; margin-bottom: 30px; }
-    h1 { color: #2b6cb0; font-size: 2rem; margin-bottom: 8px; }
-    h2 { color: #2c5282; margin-top: 30px; }
-    .badge { display: inline-block; background: #ebf8ff; color: #2b6cb0; border-radius: 999px; padding: 4px 14px; font-size: 0.85rem; margin: 4px; }
-    .card { background: white; border-radius: 10px; padding: 20px; margin: 16px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
-    footer { margin-top: 60px; font-size: 0.85rem; color: #718096; text-align: center; }
-    a { color: #2b6cb0; }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ESG Climate & Water Risk Analysis for Investment Portfolios</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .content {
+            padding: 50px 40px;
+        }
+        h2 {
+            font-size: 1.9rem;
+            color: #667eea;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            text-transform: capitalize;
+        }
+        h3 {
+            font-size: 1.4rem;
+            color: #555;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        li {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+        .highlight-box {
+            background: #f8f9fa;
+            border-left: 5px solid #667eea;
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+        .formula {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            border-radius: 6px;
+        }
+        .dataset-table {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.95rem;
+        }
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>🌍 ESG Climate &amp; Water Risk Analysis</h1>
-    <p>A data-driven project analysing climate and water-related ESG risks across sectors using quantitative frameworks.</p>
-    <span class="badge">ESG</span>
-    <span class="badge">Climate Risk</span>
-    <span class="badge">Water Risk</span>
-    <span class="badge">Sustainability</span>
-    <span class="badge">TCFD</span>
-  </header>
+    <div class="container">
+        <header>
+            <h1>🌍 ESG Climate & Water Risk Analysis for Investment Portfolios</h1>
+            <p>A comprehensive Python-based framework for analyzing climate transition risk and water scarcity exposure in investment portfolios</p>
+        </header>
 
-  <div class="card">
-    <h2>📌 Project Overview</h2>
-    <p>This project examines how climate-related physical and transition risks — as well as water scarcity and stress indicators — affect corporate ESG performance and financial outcomes across key industries.</p>
-  </div>
+        <div class="content">
+            <h2>📊 Project Overview</h2>
+            <p>
+                This project develops a Python-based ESG analytics framework to estimate an investment portfolio's exposure to climate transition risk and water scarcity risk. While many ESG risk models focus primarily on carbon emissions, this analysis introduces a dual-risk framework that integrates both carbon intensity and water stress exposure.
+            </p>
+            <p>
+                The objective is to demonstrate how environmental risk data can be integrated into portfolio risk analysis, helping investors better understand sustainability-related exposures and make more informed allocation decisions.
+            </p>
+            <p>
+                The project highlights how water scarcity, an often overlooked environmental risk, can significantly affect sectors such as beverages, agriculture, utilities, and consumer goods, making it an important factor in sustainable investment analysis.
+            </p>
 
-  <div class="card">
-    <h2>🔍 Key Research Areas</h2>
-    <ul>
-      <li>Physical climate risk exposure by geography and sector</li>
-      <li>Water stress indices and corporate water dependency</li>
-      <li>ESG rating sensitivity to climate-related disclosures (TCFD/ISSB)</li>
-      <li>Materiality mapping for climate and water risks</li>
-      <li>Scenario analysis (1.5°C, 2°C, 4°C pathways)</li>
-    </ul>
-  </div>
+            <h2>🎯 Project Objectives</h2>
+            <p>The project aims to:</p>
+            <ol>
+                <li>Estimate carbon transition risk exposure of an investment portfolio</li>
+                <li>Measure water stress exposure across sectors and holdings</li>
+                <li>Identify sectors and companies contributing most to environmental risk</li>
+                <li>Calculate weighted environmental exposure based on portfolio allocation</li>
+                <li>Visualise how environmental risk is distributed across the portfolio</li>
+                <li>Evaluate how portfolio rebalancing can reduce sustainability risk</li>
+                <li>Demonstrate how ESG data can support more resilient investment decisions</li>
+            </ol>
 
-  <div class="card">
-    <h2>🛠 Tools &amp; Frameworks</h2>
-    <ul>
-      <li>Python (pandas, matplotlib, scikit-learn)</li>
-      <li>Bloomberg Terminal / S&amp;P Capital IQ for ESG data</li>
-      <li>TCFD, ISSB S2, SASB frameworks</li>
-      <li>WRI Aqueduct Water Risk Atlas</li>
-      <li>IPCC climate scenario datasets</li>
-    </ul>
-  </div>
+            <h2>📁 Dataset Description</h2>
+            <p>The analysis uses three datasets:</p>
 
-  <div class="card">
-    <h2>📂 Repository</h2>
-    <p>Source code and analysis notebooks available on <a href="https://github.com/arnaverma18-droid/esg-climate-water-risk-analysis" target="_blank">GitHub</a>.</p>
-  </div>
+            <div class="dataset-table">
+                <h3>Portfolio Dataset</h3>
+                <p>A simulated investment portfolio containing 30 companies across 8 sectors.</p>
+                <table>
+                    <tr>
+                        <th>Column</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>company</td>
+                        <td>Company name</td>
+                    </tr>
+                    <tr>
+                        <td>sector</td>
+                        <td>Industry sector classification</td>
+                    </tr>
+                    <tr>
+                        <td>portfolio_weight</td>
+                        <td>Portfolio allocation weight</td>
+                    </tr>
+                </table>
+            </div>
 
-  <footer>
-    <p>Arnav Verma · MSc Sustainability Transformation, ESSEC Business School · 2026</p>
-  </footer>
+            <div class="dataset-table">
+                <h3>Sector Risk Dataset</h3>
+                <p>Sector-level environmental intensity metrics used as proxies for environmental exposure.</p>
+                <table>
+                    <tr>
+                        <th>Column</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>sector</td>
+                        <td>Industry sector</td>
+                    </tr>
+                    <tr>
+                        <td>carbon_intensity</td>
+                        <td>Estimated sector carbon intensity</td>
+                    </tr>
+                    <tr>
+                        <td>water_intensity</td>
+                        <td>Estimated sector water intensity</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="dataset-table">
+                <h3>Water Stress Dataset</h3>
+                <p>Regional water scarcity indicators used to approximate geographic water risk.</p>
+                <table>
+                    <tr>
+                        <th>Column</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>region</td>
+                        <td>Operating region</td>
+                    </tr>
+                    <tr>
+                        <td>water_stress_index</td>
+                        <td>Regional water scarcity score</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2>🔬 Methodology</h2>
+            <p>The analysis follows these steps:</p>
+            <ol>
+                <li>Load portfolio, sector intensity, and water stress datasets</li>
+                <li>Merge portfolio holdings with environmental intensity metrics</li>
+                <li>Calculate weighted carbon and water exposure for each company</li>
+                <li>Aggregate environmental exposure by company and sector</li>
+                <li>Visualize portfolio sustainability risk distribution</li>
+                <li>Perform scenario analysis through portfolio rebalancing</li>
+                <li>Simulate environmental cost impacts under carbon and water pricing scenarios</li>
+            </ol>
+
+            <h2>📐 Key Formulas</h2>
+            
+            <div class="formula">
+                <strong>Carbon Exposure:</strong><br>
+                carbon_exposure = portfolio_weight × carbon_intensity
+            </div>
+
+            <div class="formula">
+                <strong>Water Exposure:</strong><br>
+                water_exposure = portfolio_weight × water_intensity × water_stress_index
+            </div>
+
+            <div class="formula">
+                <strong>Composite ESG Exposure:</strong><br>
+                composite_esg = carbon_exposure + (0.6 × water_exposure)
+            </div>
+
+            <div class="formula">
+                <strong>Carbon Cost Scenario:</strong><br>
+                carbon_cost = carbon_exposure × carbon_price
+            </div>
+
+            <div class="formula">
+                <strong>Water Scarcity Cost Scenario:</strong><br>
+                water_cost = water_exposure × water_price
+            </div>
+
+            <h2>📈 Visualizations</h2>
+            <p>The project generates five key visual outputs:</p>
+            <ol>
+                <li><strong>Sector ESG Exposure</strong> - Stacked bar chart showing combined carbon and water exposure across sectors.</li>
+                <li><strong>Portfolio Allocation</strong> - Donut chart illustrating the distribution of portfolio weight by sector.</li>
+                <li><strong>Top 10 Holdings by Environmental Risk</strong> - Horizontal bar chart highlighting the companies contributing most to total ESG exposure.</li>
+                <li><strong>Portfolio Rebalancing Comparison</strong> - Side-by-side comparison showing how reallocating toward lower-risk sectors reduces carbon and water exposure.</li>
+                <li><strong>Carbon vs Water Risk Scatter Plot</strong> - Bubble chart visualizing holdings by carbon exposure (x-axis), water exposure (y-axis), and portfolio weight (bubble size), identifying companies in the high-risk quadrant.</li>
+            </ol>
+
+            <h2>🛠️ Tools & Technologies</h2>
+            <div>
+                <span class="badge">Python</span>
+                <span class="badge">Pandas</span>
+                <span class="badge">NumPy</span>
+                <span class="badge">Matplotlib</span>
+                <span class="badge">Jupyter Notebook</span>
+                <span class="badge">GitHub Pages</span>
+            </div>
+
+            <h2>💡 Key Insights</h2>
+            <p>The analysis reveals several important sustainability insights:</p>
+            <ul>
+                <li>Environmental exposure is often concentrated in a few high-intensity sectors</li>
+                <li>Carbon and water risks are not always correlated, meaning carbon-focused ESG strategies may overlook significant environmental risks</li>
+                <li>Water-intensive sectors such as beverages, agriculture, and utilities can face significant operational risk under water scarcity</li>
+                <li>Portfolio rebalancing toward lower-intensity sectors can meaningfully reduce environmental risk exposure</li>
+                <li>Integrating multiple environmental metrics can support more robust ESG investment strategies</li>
+            </ul>
+
+            <h2>🎓 Conclusion</h2>
+            <p>
+                This project demonstrates how carbon and water risk data can be integrated into portfolio analytics to identify sustainability-related exposures. By combining portfolio allocation data with environmental intensity metrics, investors can better understand how climate transition risk and water scarcity may affect their investments.
+            </p>
+            <p>
+                The analysis highlights the importance of multi-dimensional ESG frameworks that extend beyond carbon emissions and incorporate broader resource risks that may shape the future of sustainable finance.
+            </p>
+        </div>
+
+        <footer>
+            <p>Developed by <strong>Arnav Verma</strong> | MSc Sustainability Transformation, ESSEC Business School</p>
+            <p><a href="https://github.com/arnaverma18-droid/esg-climate-water-risk-analysis" target="_blank">View on GitHub</a></p>
+        </footer>
+    </div>
 </body>
 </html>
