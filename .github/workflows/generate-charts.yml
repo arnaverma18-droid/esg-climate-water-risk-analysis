@@ -20,6 +20,12 @@ jobs:
       - name: Install dependencies
         run: pip install pandas numpy matplotlib
 
+      - name: Prepare data folder
+        run: |
+          mkdir -p data
+          cp portfolio_data.csv data/portfolio_data.csv
+          cp sector_risk.csv data/sector_risk.csv
+
       - name: Run generate_charts.py
         run: python generate_charts.py
 
