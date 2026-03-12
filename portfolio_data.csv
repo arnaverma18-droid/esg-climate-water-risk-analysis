@@ -1,0 +1,31 @@
+company,sector,portfolio_weight
+ExxonMobil,Energy,0.055
+Chevron,Energy,0.048
+Shell,Energy,0.042
+BP,Energy,0.038
+NextEra Energy,Utilities,0.045
+Duke Energy,Utilities,0.038
+Southern Company,Utilities,0.032
+National Grid,Utilities,0.028
+Rio Tinto,Materials,0.040
+BHP Group,Materials,0.035
+Dow Chemical,Materials,0.030
+Nucor,Materials,0.022
+Apple,Technology,0.048
+Microsoft,Technology,0.045
+Alphabet,Technology,0.040
+TSMC,Technology,0.030
+JPMorgan Chase,Financials,0.042
+BlackRock,Financials,0.035
+Goldman Sachs,Financials,0.028
+HSBC,Financials,0.022
+Nestle,Consumer Staples,0.030
+Unilever,Consumer Staples,0.025
+Procter & Gamble,Consumer Staples,0.020
+Coca-Cola,Consumer Staples,0.018
+Johnson & Johnson,Healthcare,0.028
+Pfizer,Healthcare,0.022
+Roche,Healthcare,0.018
+UnitedHealth,Healthcare,0.015
+Amazon,Consumer Discretionary,0.025
+Tesla,Consumer Discretionary,0.022
